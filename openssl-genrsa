@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "$#" -ne 1 ]; then
+    echo "E: Usage: openssh-genrsa file.key"
+    exit
+fi
+
+openssl genrsa -des3 -out $1 4096
+

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "$#" -ne 2 ]; then
+    echo "E: Usage: openssh-genselfsign new.key new.pem"
+    exit
+fi
+
+openssl req -x509 -new -nodes -key $1 -days 3650 -out $2
+

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "$#" -ne 1 ]; then
+    echo "E: Usage: openssh-showcert file.pem"
+    exit
+fi
+
+openssl x509 -in $1 -noout -text
+

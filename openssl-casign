@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "$#" -ne 4 ]; then
+    echo "E: Usage: openssh-casign root.key root.pem new.csr new.pem"
+    exit
+fi
+
+openssl x509 -req -CAkey $1 -CA $2 -in $3 -CAcreateserial -out $4 -days 730
+
