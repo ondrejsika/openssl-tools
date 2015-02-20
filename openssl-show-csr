@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "$#" -ne 1 ]; then
+    echo "E: Usage: openssh-show-csr file.csr"
+    exit
+fi
+
+openssl req -in $1 -noout -text
+
